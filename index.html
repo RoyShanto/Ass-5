@@ -21,87 +21,154 @@
 </head>
 
 <body>
-    <header class="bg-base-200 font-bold flex justify-between items-center py-6 lg:px-32 max-sm:px-4 lg:pb-16">
-        <button class="btn font-bold text-xl bg-lime-400 max-sm:hidden">Blog</button>
+    <header class="bg-base-200 font-bold flex justify-between items-center py-6 lg:px-32 md:px-4 max-sm:px-4 lg:pb-16">
+        <button id="btn-blog" class="btn font-bold text-xl bg-lime-400 max-sm:hidden">Blog</button>
+        <button id="btn-home" class="btn font-bold text-xl bg-lime-400 max-sm:hidden hidden">Home</button>
         <div class="flex items-center space-x-3">
             <img src="B10A5-DOM-Quest-Build-and-Manipulate/assets/logo.png" alt="" height="48px" width="48px">
-            <h1 class="text-2xl">Donate <br class="lg:hidden"> Bangladesh</h1>
+            <a href="index.html" class="text-2xl">Donate <br class="lg:hidden"> Bangladesh</a>
         </div>
         <div class="flex lg:space-x-3 max-sm:space-x-1 items-center">
             <img src="B10A5-DOM-Quest-Build-and-Manipulate/assets/coin.png" alt="">
-            <span class="text-gray-500">5500</span>
+            <span class="text-gray-500" id="current-amount">5500</span>
             <span class="text-gray-500">BDT</span>
         </div>
     </header>
 
 
-    <main class="lg:my-20 max-sm:my-5 lg:mx-36">
+    <main class="lg:my-20 max-sm:my-5 lg:mx-36 md:my-7">
         <div class="space-x-3 text-center">
-            <button class="btn btn-lg font-bold text-xl bg-lime-400">Donation</button>
-            <button class="btn btn-lg font-bold text-xl">History</button>
+            <button id="btn-donation" class="btn btn-lg font-bold text-xl bg-lime-400">Donation</button>
+            <button id="btn-history" class="btn btn-lg font-bold text-xl">History</button>
         </div>
 
-        <div class="flex flex-col items-center">
+        <div id="show-faq" class="hidden">
+            <div class="flex items-end mb-4">
+                <h1 class="font-bold text-4xl">Important FAQ</h1>
+                <img src="https://img.icons8.com/ios/50/ask-question--v1.png" alt="" width="40">
+            </div>
+            <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-2" checked="checked" />
+                <div class="collapse-title font-semibold">How do I create an account?</div>
+                <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the
+                    registration process.</div>
+            </div>
+            <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title font-semibold">I forgot my password. What should I do?</div>
+                <div class="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the
+                    instructions sent to your email.</div>
+            </div>
+            <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title font-semibold">How do I update my profile information?</div>
+                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make
+                    changes.</div>
+            </div>
+        </div>
+
+
+        <div id="show-history" class="hidden">
+            <h3 id="amount-history"></h3>
+            <p id="date-history"></p>
+        </div>
+
+
+
+        <div id="show-donation" class="flex flex-col items-center">
             <div class="hero-content flex-col lg:flex-row border-2 border-gray-100 rounded-lg mt-8">
                 <div>
-                    <img src="B10A5-DOM-Quest-Build-and-Manipulate/assets/noakhali.png"
-                    class="rounded-lg w-full" />
+                    <img src="B10A5-DOM-Quest-Build-and-Manipulate/assets/noakhali.png" class="rounded-lg w-full" />
                 </div>
                 <div class="space-y-5 lg:w-1/2">
                     <div class="flex space-x-3 items-center bg-base-200 px-4 py-3 rounded-md mr-auto w-fit shadow-sm">
                         <img src="B10A5-DOM-Quest-Build-and-Manipulate/assets/coin.png" alt="">
-                        <span class="text-gray-500">0</span>
+                        <span class="text-gray-500" id="donated-noakhali">0</span>
                         <span class="text-gray-500">BDT</span>
                     </div>
-                    <h1 class="text-2xl font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
-                    <p class="text-gray-500"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-                    <input class="p-4 w-full border-gray-300 shadow-md rounded-lg" type="number"
-                        placeholder="Write Donation Amount"><br>
-                    <button class="btn w-full rounded-lg bg-lime-400 text-black">Donate Now</button>
+                    <h1 id="title-Noakhali" class="text-2xl font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
+                    <p class="text-gray-500"> The recent floods in Noakhali have caused significant damage to homes
+                        infrastructure. Your donation will help provide essential supplies and to those affected by this
+                        disaster. Every contribution, big or small, makes difference. Please join us in supporting the
+                        relief efforts and making a positive impact on the lives of those in need.</p>
+                    <input class="p-4 w-full border-gray-300 shadow-md rounded-lg" id="new-donate-noakhali"
+                        type="number" placeholder="Write Donation Amount"><br>
+                    <button class="btn w-full rounded-lg bg-lime-400 text-black" id="btn-donate-noakhali">Donate
+                        Now</button>
                 </div>
             </div>
             <div class="hero-content flex-col lg:flex-row border-2 border-gray-100 rounded-lg mt-8">
                 <div>
-                    <img src="B10A5-DOM-Quest-Build-and-Manipulate/assets/feni.png"
-                    class="rounded-lg w-full" />
+                    <img src="B10A5-DOM-Quest-Build-and-Manipulate/assets/feni.png" class="rounded-lg w-full" />
                 </div>
                 <div class="space-y-5 lg:w-1/2">
                     <div class="flex space-x-3 items-center bg-base-200 px-4 py-3 rounded-md mr-auto w-fit shadow-sm">
                         <img src="B10A5-DOM-Quest-Build-and-Manipulate/assets/coin.png" alt="">
-                        <span class="text-gray-500">600</span>
+                        <span class="text-gray-500" id="donated-feni">600</span>
                         <span class="text-gray-500">BDT</span>
                     </div>
-                    <h1 class="text-2xl font-bold">Donate for Flood Relief in Feni,Bangladesh</h1>
-                    <p class="text-gray-500">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
-                    <input class="p-4 w-full border-gray-300 shadow-md rounded-lg" type="number"
+                    <h1 id="title-feni" class="text-2xl font-bold">Donate for Flood Relief in Feni,Bangladesh</h1>
+                    <p class="text-gray-500">The recent floods in Feni have devastated local communities, leading to
+                        severe disruption and loss. Your generous donation will help provide immediate aid, including
+                        food, clean water, and medical supplies, to those affected by this calamity. Together, we can
+                        offer crucial support and help rebuild lives in the aftermath of this disaster. Every
+                        contribution counts towards making a real difference. Please consider donating today to assist
+                        those in urgent need.</p>
+                    <input class="p-4 w-full border-gray-300 shadow-md rounded-lg" id="new-donate-feni" type="number"
                         placeholder="Write Donation Amount"><br>
-                    <button class="btn w-full rounded-lg bg-lime-400 text-black">Donate Now</button>
+                    <button class="btn w-full rounded-lg bg-lime-400 text-black" id="btn-donate-feni">Donate
+                        Now</button>
                 </div>
             </div>
             <div class="hero-content flex-col lg:flex-row border-2 border-gray-100 rounded-lg mt-8">
                 <div>
                     <img src="B10A5-DOM-Quest-Build-and-Manipulate/assets/quota-protest.png"
-                    class="rounded-lg w-full" />
+                        class="rounded-lg w-full" />
                 </div>
                 <div class="space-y-5 lg:w-1/2">
                     <div class="flex space-x-3 items-center bg-base-200 px-4 py-3 rounded-md mr-auto w-fit shadow-sm">
                         <img src="B10A5-DOM-Quest-Build-and-Manipulate/assets/coin.png" alt="">
-                        <span class="text-gray-500">2400</span>
+                        <span class="text-gray-500" id="donated-quota">2400</span>
                         <span class="text-gray-500">BDT</span>
                     </div>
-                    <h1 class="text-2xl font-bold">Aid for Injured in the Quota Movement</h1>
-                    <p class="text-gray-500">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
-                    <input class="p-4 w-full border-gray-300 shadow-md rounded-lg" type="number"
+                    <h1 id="title-quota" class="text-2xl font-bold">Aid for Injured in the Quota Movement</h1>
+                    <p class="text-gray-500">The recent Quota movement has resulted in numerous injuries and significant
+                        hardship for many individuals. Your support is crucial in providing medical assistance,
+                        rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that
+                        injured individuals receive the care and support they need during this challenging time. Every
+                        donation plays a vital role in alleviating their suffering and aiding in their recovery. Please
+                        consider making a donation to support these brave individuals in their time of need.</p>
+                    <input class="p-4 w-full border-gray-300 shadow-md rounded-lg" id="new-donate-quota" type="number"
                         placeholder="Write Donation Amount"><br>
-                    <button class="btn w-full rounded-lg bg-lime-400 text-black">Donate Now</button>
+                    <button class="btn w-full rounded-lg bg-lime-400 text-black" id="btn-donate-quota">Donate
+                        Now</button>
                 </div>
-            </div> 
+            </div>
         </div>
+
+
+        <!-- modal -->
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle text-center">
+            <div class="modal-box">
+                <h1 class="text-4xl font-bold">Congrates!</h1>
+                <img src="B10A5-DOM-Quest-Build-and-Manipulate/assets/coin.png" alt="" class="mx-auto pt-3">
+                <p class="py-4">You Have Donated for Humankind</p>
+                <h3 class="text-2xl">Successfully</h3>
+                <div class="modal-action justify-center">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close Confirmation</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+
     </main>
 
     <footer class="bg-base-200 h-36"></footer>
 
-
+    <script src="js/utilities.js"></script>
 </body>
 
 </html>
